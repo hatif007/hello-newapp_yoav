@@ -5,12 +5,12 @@
 
 
 
-def user        = "elevy99927"              // your name: Docker Hub user AND gitops file name
-def appname     = "helloworld"
+def user        = "hatif007"              // your name: Docker Hub user AND gitops file name
+def appname     = "expensemgmt"
 def appimage    = "${user}/${appname}"      // docker.io/<user>/helloworld
 def apptag      = "${env.BUILD_NUMBER}"
 def envName     = "dev"
-def department  = "devops"
+def department  = "finance"
 
 def gitopsRepo  = "github.com/elevy99927-demos/gitops.git"
 def gitopsFile  = "systems/${department}/${envName}/${user}.yaml"
