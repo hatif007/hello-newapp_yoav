@@ -50,7 +50,7 @@ podTemplate(containers: [
         stage('push') {
             container('docker') {
                 // TAGS: <BUILD_NUMBER> (immutable, deployed by GitOps) and latest
-                withCredentials([usernamePassword(credentialsId: 'docker-cred', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_TOKEN')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_TOKEN')]) {
                     sh """
                         set -e
                         echo "\$DOCKER_TOKEN" | docker login -u "\$DOCKER_USER" --password-stdin
