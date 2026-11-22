@@ -71,7 +71,7 @@ podTemplate(containers: [
                     command -v git >/dev/null || apk add --no-cache git
 
                     rm -rf gitops
-                    git clone https://\${GIT_USER}:\${GIT_TOKEN}@${gitopsRepo} gitops
+                    git clone "https://\${GIT_USER}:\${GIT_TOKEN}@${gitopsRepo}" gitops
                     cd gitops
                     git config user.name  "Jenkins (${user})"
                     git config user.email "elevy99927-demos@users.noreply.github.com"
