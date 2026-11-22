@@ -65,7 +65,7 @@ podTemplate(containers: [
         stage('deploy') {
             container('deployer') {
                 echo "Rendering chart into ${gitopsRepo} -> ${gitopsFile}"
-                withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')]) {
+                withCredentials([usernamePassword(credentialsId: 'github1-token', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')]) {
                 sh """#!/bin/sh
                     set -e
                     command -v git >/dev/null || apk add --no-cache git
